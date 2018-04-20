@@ -10,7 +10,7 @@ module.exports = {
         tags: ['api'],
         validate: {
             params: {
-                id: Joi.number().integer().min(1)
+                id: Joi.number().integer()
             }
         },
         handler: async (request) => {
