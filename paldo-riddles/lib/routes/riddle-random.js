@@ -10,7 +10,7 @@ module.exports = {
         handler: async (request) => {
 
             const { Riddles } = request.models();
-            const { count } = await Riddles.query().count('* as count').first();
+            const count = await Riddles.query().resultSize();
 
             if (count === 0) {
                 throw Boom.notFound('Looks like we don\'t have any riddles. Sorry!');
