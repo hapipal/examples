@@ -24,7 +24,17 @@ module.exports = new Confidence.Store({
         plugins: [
             {
                 plugin: '../lib', // Main plugin
-                options: {}
+                options: {
+                    email: {
+                        host: 'smtp.ethereal.email',
+                        port: 587,
+                        secure: false,
+                        auth: {
+                            user: process.env.EMAIL_USER,
+                            pass: process.env.EMAIL_PASS
+                        }
+                    }
+                }
             },
             {
                 plugin: {
