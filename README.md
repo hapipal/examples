@@ -11,6 +11,10 @@ A fully fledged application backend built with hapi pal including CRUD operation
 
 Example codebase for the hapi pal [Getting Started](https://hapipal.com/getting-started) tutorial.
 
+### [sending-emails](sending-emails)
+
+A command-line application built with hapi pal that sends templated emails using [nodemailer](https://github.com/nodemailer/nodemailer), [vision](https://github.com/hapijs/vision), and [schmervice](https://github.com/hapipal/schmervice).
+
 ## Community
 ### [jeff-kilbride/haute-couture-example](https://github.com/jeff-kilbride/haute-couture-example)
 
