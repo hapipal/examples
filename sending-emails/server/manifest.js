@@ -25,7 +25,7 @@ module.exports = new Confidence.Store({
             {
                 plugin: '../lib', // Main plugin
                 options: {
-                    email: {
+                    email: {  // Any nodemailer transport options will work here
                         host: 'smtp.ethereal.email',
                         port: 587,
                         secure: false,
