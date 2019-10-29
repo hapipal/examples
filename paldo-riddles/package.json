@@ -38,7 +38,7 @@
     "hpal": "1.x.x",
     "hoek": "5.x.x",
     "inert": "5.x.x",
-    "knex": "0.14.x",
+    "knex": "0.20.x",
     "lab": "15.x.x",
     "vision": "5.x.x",
     "sqlite3": "4.x.x"
