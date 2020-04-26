@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node server",
-    "test": "lab -a code -I '__core-js_shared__' -L",
+    "test": "lab -a @hapi/code -I 'core,__core-js_shared__,CSS' -L",
     "lint": "eslint ."
   },
   "repository": {
@@ -19,28 +19,28 @@
     "url": "git+https://github.com/hapipal/examples.git"
   },
   "dependencies": {
-    "boom": "7.x.x",
+    "@hapi/joi": "15.x.x",
+    "@hapi/boom": "7.x.x",
     "haute-couture": "3.x.x",
-    "joi": "13.x.x",
     "objection": "1.x.x",
     "schwifty": "4.x.x"
   },
   "devDependencies": {
-    "code": "5.x.x",
-    "confidence": "3.x.x",
-    "dotenv": "5.x.x",
-    "eslint": "4.x.x",
-    "eslint-config-hapi": "11.x.x",
-    "eslint-plugin-hapi": "4.x.x",
-    "glue": "5.x.x",
-    "hapi": "17.x.x",
-    "hapi-swagger": "9.x.x",
-    "hpal": "1.x.x",
-    "hoek": "5.x.x",
-    "inert": "5.x.x",
-    "knex": "0.14.x",
-    "lab": "15.x.x",
-    "vision": "5.x.x",
+    "@hapi/code": "5.x.x",
+    "@hapi/eslint-config-hapi": "12.x.x",
+    "@hapi/eslint-plugin-hapi": "4.x.x",
+    "@hapi/glue": "6.x.x",
+    "@hapi/hapi": "18.x.x",
+    "@hapi/hoek": "6.x.x",
+    "@hapi/inert": "5.x.x",
+    "@hapi/lab": "19.x.x",
+    "@hapi/vision": "5.x.x",
+    "confidence": "4.x.x",
+    "dotenv": "8.x.x",
+    "eslint": "5.x.x",
+    "hapi-swagger": "10.x.x",
+    "hpal": "2.x.x",
+    "knex": "0.16.x",
     "sqlite3": "4.x.x"
   },
   "bugs": {
