@@ -40,7 +40,7 @@
     "eslint": "5.x.x",
     "hapi-swagger": "10.x.x",
     "hpal": "2.x.x",
-    "knex": "0.16.x",
+    "knex": "0.21.x",
     "sqlite3": "4.x.x"
   },
   "bugs": {
