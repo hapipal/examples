@@ -6,6 +6,9 @@ A place to find example projects built using hapi pal
 
 A fully fledged application backend built with hapi pal including CRUD operations, authentication, routing, pagination, and more.  The functionality implemented in this project is specified by the [RealWorld API spec](https://github.com/gothinkster/realworld/tree/master/api).
 
+### [Fishbowl](https://github.com/devinivy/fishbowl)
+
+A realtime game built with React and hapi pal, driven by websockets via [nes](https://github.com/hapijs/nes).
 
 ### [paldo-riddles](paldo-riddles)
 
