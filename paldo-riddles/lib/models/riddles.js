@@ -1,7 +1,7 @@
 'use strict';
 
 const Schwifty = require('schwifty');
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
 
 module.exports = class Riddles extends Schwifty.Model {
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
 
 module.exports = {
     method: 'post',
@@ -8,11 +8,11 @@ module.exports = {
     options: {
         tags: ['api'],
         validate: {
-            payload: {
+            payload: Joi.object({
                 slug: Joi.string().required(),
                 question: Joi.string().required(),
                 answer: Joi.string().required()
-            }
+            })
         },
         handler: async (request) => {
 

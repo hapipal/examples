@@ -1,8 +1,8 @@
 'use strict';
 
-exports.up = (knex, Promise) => {
+exports.up = async (knex) => {
 
-    return knex.schema.createTable('Riddles', (table) => {
+    await knex.schema.createTable('Riddles', (table) => {
 
         table.increments('id').primary();
         table.string('slug').notNullable();
@@ -11,7 +11,7 @@ exports.up = (knex, Promise) => {
     });
 };
 
-exports.down = (knex, Promise) => {
+exports.down = async (knex) => {
 
-    return knex.schema.dropTable('Riddles');
+    await knex.schema.dropTable('Riddles');
 };

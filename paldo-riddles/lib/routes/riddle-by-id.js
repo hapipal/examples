@@ -1,7 +1,7 @@
 'use strict';
 
 const Boom = require('@hapi/boom');
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
 
 module.exports = {
     method: 'get',
@@ -9,9 +9,9 @@ module.exports = {
     options: {
         tags: ['api'],
         validate: {
-            params: {
+            params: Joi.object({
                 id: Joi.number().integer()
-            }
+            })
         },
         handler: async (request) => {
 

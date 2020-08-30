@@ -2,6 +2,8 @@
 
 const Dotenv = require('dotenv');
 const Confidence = require('confidence');
+const Toys = require('toys');
+const Schwifty = require('schwifty');
 
 // Pull .env into process.env
 Dotenv.config({ path: `${__dirname}/.env` });
@@ -9,13 +11,20 @@ Dotenv.config({ path: `${__dirname}/.env` });
 // Glue manifest as a confidence store
 module.exports = new Confidence.Store({
     server: {
-        host: '0.0.0.0',
-        port: process.env.PORT || 3000,
+        host: 'localhost',
+        port: {
+            $env: 'PORT',
+            $coerce: 'number',
+            $default: 3000
+        },
         debug: {
-            $filter: 'NODE_ENV',
-            development: {
-                log: ['error', 'implementation', 'internal'],
-                request: ['error', 'implementation', 'internal']
+            $filter: { $env: 'NODE_ENV' },
+            $default: {
+                log: ['error'],
+                request: ['error']
+            },
+            production: {
+                request: ['implementation']
             }
         }
     },
@@ -40,12 +49,22 @@ module.exports = new Confidence.Store({
                             useNullAsDefault: true,         // Suggested for sqlite3
                             connection: {
                                 filename: ':memory:'
+                            },
+                            migrations: {
+                                stub: Schwifty.migrationsStubPath
                             }
                         }
                     },
                     production: {
                         migrateOnStart: false
                     }
+                }
+            },
+            {
+                plugin: {
+                    $filter: { $env: 'NODE_ENV' },
+                    $default: 'hpal-debug',
+                    production: Toys.noop
                 }
             }
         ]
