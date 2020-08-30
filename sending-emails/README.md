@@ -7,11 +7,10 @@ Before sending any emails, you need some test account credentials with [ethereal
 
 ```sh
 $ npm install
-$ npm install -g hpal # For running your app's CLI commands and more
 $ cp server/.env-keep server/.env
-$ hpal run sending-emails:create-test-account
+$ npx hpal run sending-emails:create-test-account
 # Place test account credentials in server/.env
-$ hpal run sending-emails:welcome Paldo paldo@hapipal.com
+$ npx hpal run sending-emails:welcome Paldo paldo@hapipal.com
 # Go to https://ethereal.email, login with your test account credentials,
 # and see that your templated welcome email was sent to Paldo.
 ```
