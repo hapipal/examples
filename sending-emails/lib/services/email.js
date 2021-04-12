@@ -1,7 +1,7 @@
 'use strict';
 
 const Util = require('util');
-const Schmervice = require('schmervice');
+const Schmervice = require('@hapipal/schmervice');
 const Nodemailer = require('nodemailer');
 const { htmlToText: HtmlToText } = require('nodemailer-html-to-text');
 

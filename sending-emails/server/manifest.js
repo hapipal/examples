@@ -1,8 +1,8 @@
 'use strict';
 
 const Dotenv = require('dotenv');
-const Confidence = require('confidence');
-const Toys = require('toys');
+const Confidence = require('@hapipal/confidence');
+const Toys = require('@hapipal/toys');
 
 // Pull .env into process.env
 Dotenv.config({ path: `${__dirname}/.env` });
@@ -12,14 +12,14 @@ module.exports = new Confidence.Store({
     server: {
         host: 'localhost',
         port: {
-            $env: 'PORT',
+            $param: 'PORT',
             $coerce: 'number',
             $default: 3000
         },
         debug: {
-            $filter: { $env: 'NODE_ENV' },
+            $filter: 'NODE_ENV',
             $default: {
-                log: ['error'],
+                log: ['error', 'start'],
                 request: ['error']
             },
             production: {
@@ -37,8 +37,8 @@ module.exports = new Confidence.Store({
                         port: 587,
                         secure: false,
                         auth: {
-                            user: process.env.EMAIL_USER,
-                            pass: process.env.EMAIL_PASS
+                            user: { $param: 'EMAIL_USER' },
+                            pass: { $param: 'EMAIL_PASS' }
                         }
                     }
                 }
@@ -46,7 +46,7 @@ module.exports = new Confidence.Store({
             {
                 plugin: {
                     $filter: 'NODE_ENV',
-                    $default: 'hpal-debug',
+                    $default: '@hapipal/hpal-debug',
                     production: Toys.noop
                 }
             }
