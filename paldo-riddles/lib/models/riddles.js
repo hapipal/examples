@@ -1,22 +1,16 @@
 'use strict';
 
-const Schwifty = require('schwifty');
+const Schwifty = require('@hapipal/schwifty');
 const Joi = require('joi');
 
 module.exports = class Riddles extends Schwifty.Model {
 
-    static get tableName() {
+    static tableName = 'Riddles';
 
-        return 'Riddles';
-    }
-
-    static get joiSchema() {
-
-        return Joi.object({
-            id: Joi.number().integer(),
-            slug: Joi.string(),
-            question: Joi.string(),
-            answer: Joi.string()
-        });
-    }
+    static joiSchema = Joi.object({
+        id: Joi.number().integer(),
+        slug: Joi.string(),
+        question: Joi.string(),
+        answer: Joi.string()
+    });
 };
