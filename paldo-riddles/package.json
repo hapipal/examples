@@ -43,7 +43,7 @@
     "eslint": "7.x.x",
     "exiting": "6.x.x",
     "hapi-swagger": "14.x.x",
-    "knex": "0.21.x",
+    "knex": "2.4.x",
     "sqlite3": "5.x.x"
   },
   "bugs": {
